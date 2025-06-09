@@ -5,6 +5,7 @@
     "manifest_version": 2,
     "permissions": [
         "tabs",
+        "storage",
         "*://*.youtube.com/*"
     ],
     "background": {
@@ -16,9 +17,9 @@
         "default_title": "Hide YouTube Shorts"
     },
     "icons": {
-        "16": "public/icons/icon16.png",
-        "32": "public/icons/icon48.png",
-        "48": "public/icons/icon48.png",
-        "128": "public/icons/icon128.png"
+        "16": "icons/icon16.png",
+        "32": "icons/icon48.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
     }
 }

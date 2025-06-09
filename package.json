@@ -1,5 +1,14 @@
 {
+    "type": "module",
     "scripts": {
-        "build": "node build.js"
+        "compile": "tsc",
+        "build": "pnpm compile && node build/build.js",
+        "dev": "tsc --watch"
+    },
+    "devDependencies": {
+        "@types/chrome": "^0.0.246",
+        "@types/node": "^20.0.0",
+        "@types/webextension-polyfill": "^0.10.0",
+        "typescript": "^5.0.0"
     }
 }
