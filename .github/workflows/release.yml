@@ -69,7 +69,7 @@ jobs:
         with:
           tag_name: ${{ github.event.inputs.version }}
           name: Hide YouTube Shorts v${{ github.event.inputs.version }}
-          body_path: ./changelog.md
+          body_path: ./CHANGELOG.md
           files: |
             hide-youtube-shorts-chrome-${{ github.event.inputs.version }}.zip
             hide-youtube-shorts-firefox-${{ github.event.inputs.version }}.zip
