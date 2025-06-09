@@ -25,6 +25,14 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Update versions
         id: update-versions
         run: |
@@ -32,7 +40,7 @@ jobs:
           sed -i "s/${{ github.event.inputs.previous_version }}/${{ github.event.inputs.version }}/g" manifest.firefox.json
 
       - name: Build directories
-        run: node ./build.js
+        run: pnpm build
 
       - name: Create Chrome ZIP
         run: |
