@@ -1,6 +1,6 @@
 {
     "type": "module",
-    "version": "1.7.1",
+    "version": "1.8.0",
     "scripts": {
         "compile": "tsc",
         "build": "pnpm compile && node build/build.js",
