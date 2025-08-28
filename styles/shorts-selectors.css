@@ -1,59 +1,63 @@
 #endpoint[title="Shorts"] {
-    display: none !important;
+  display: none !important;
 }
 
 yt-tab-shape[tab-title="Shorts"] {
-    display: none !important;
+  display: none !important;
 }
 
 ytd-rich-item-renderer:has(a[href*="/shorts/"]) {
-    display: none !important;
+  display: none !important;
 }
 
 ytd-rich-shelf-renderer:has(#dismissible) {
-    display: none !important;
+  display: none !important;
 }
 
 ytm-rich-item-renderer:has(a[href*="/shorts/"]) {
-    display: none !important;
+  display: none !important;
 }
 
 ytm-reel-shelf-renderer:has(a[href*="/shorts/"]) {
-    display: none !important;
+  display: none !important;
 }
 
 ytd-reel-shelf-renderer:has(#dismissible) {
-    display: none !important;
+  display: none !important;
 }
 
 ytm-pivot-bar-item-renderer:has(.pivot-shorts) {
-    display: none !important;
+  display: none !important;
 }
 
 ytd-notification-renderer:has(a[href*="/shorts/"]) {
-    display: none !important;
+  display: none !important;
 }
 
 ytd-compact-video-renderer:has(a[href*="/shorts/"]) {
-    display: none !important;
+  display: none !important;
 }
 
 ytd-reel-shelf-renderer:has(a[href*="/shorts/"]) {
-    display: none !important;
+  display: none !important;
 }
 
 ytd-video-renderer:has(a[href*="/shorts/"]) {
-    display: none !important;
+  display: none !important;
 }
 
 ytm-video-with-context-renderer:has(a[href*="/shorts/"]) {
-    display: none !important;
+  display: none !important;
 }
 
 ytd-shelf-renderer:has(a[href*="/shorts/"]) {
-    display: none !important;
+  display: none !important;
 }
 
 ytm-item-section-renderer:has(a[href*="/shorts/"]) {
-    display: none !important;
+  display: none !important;
+}
+
+grid-shelf-view-model {
+  display: none !important;
 }
