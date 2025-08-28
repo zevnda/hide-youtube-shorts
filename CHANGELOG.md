@@ -1,4 +1,1 @@
-- Improved code readability
-- Improved the insertion/removal of stylesheets
-- URL bar icon now reflects the enabled/disabled state of the extension
-- Fixed an issue on FireFox where Shorts were unable to be rehidden after unhiding them
+- Fix shorts shelf not being hidden in search results
