@@ -11,7 +11,7 @@
 
 [Chrome Written Guide](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked) | [Firefox Written Guide](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension#installing) | [Chrome/Firefox Video Guide](https://www.youtube.com/watch?v=dhaGRJvJAII)
 
-## Shorts video are hidden from
+## Shorts videos are hidden from
 - ✅ Home page
 - ✅ Subscriptions feed
 - ✅ Search results 
@@ -19,8 +19,5 @@
 - ✅ The notifications menu
 - and anywhere else they usually appear
 
-## Support
-[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ff69b4?logo=github&style=for-the-badge)](https://github.com/sponsors/probablyraging)
-
 ## License
-Hide YouTube Shorts is licensed under the **[GPL-3.0 License](./LICENSE)**
+Copyright © 2022-2025 zevnda — **[GPL-3.0 License](./LICENSE)**
