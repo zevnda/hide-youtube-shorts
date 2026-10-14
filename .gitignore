@@ -2,3 +2,6 @@ build/
 dist/
 .gradle/
 .kotlin/
+web-ext-artifacts/
+.env
+.amo-build-number

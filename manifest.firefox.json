@@ -3,6 +3,16 @@
     "description": "Hide YouTube Shorts videos effortlessly with this powerful browser extension",
     "version": "1.9.0",
     "manifest_version": 2,
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{a29a1b45-9fda-47d3-bdd7-8c6a80e0a31e}",
+            "data_collection_permissions": {
+                "required": [
+                    "none"
+                ]
+            }
+        }
+    },
     "permissions": [
         "tabs",
         "storage",
