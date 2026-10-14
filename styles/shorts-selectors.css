@@ -1,10 +1,7 @@
 /*
  * YouTube reuses the same shelf and item elements for normal videos, so don't hide by element name
  * alone or you'll wipe out half the page. Match on something only Shorts have, like [is-shorts],
- * reel shelves, or a /shorts/ link.
- *
- * Easiest way to find one is to inspect a Short in devtools and look up the tree, or run
- * `npm run inspect -- <url>` from e2e/. Run `npm test` in e2e/ after changing anything.
+ * reel shelves, or a /shorts/ link
  */
 
 /* Sidebar, mini sidebar, channel tab, mobile bottom bar */
