@@ -1,1 +1,0 @@
-- Improved CSS selectors to prevent the extension hiding non-Shorts elements

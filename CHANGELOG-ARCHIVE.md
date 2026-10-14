@@ -1,3 +1,6 @@
+## v1.9.1 (15 October 2026)
+
+- Improved CSS selectors to prevent the extension hiding non-Shorts elements
 ## v1.9.0 (15 October 2026)
 
 - Rewrite the extension in Kotlin
