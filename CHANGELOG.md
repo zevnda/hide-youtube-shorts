@@ -1,4 +1,1 @@
-- Rewrite the extension in Kotlin
-- New extension icon
-- Sharper toolbar icon on high-resolution displays
-- License changed from GPL-3.0 to MIT
+- Improved CSS selectors to prevent the extension hiding non-Shorts elements

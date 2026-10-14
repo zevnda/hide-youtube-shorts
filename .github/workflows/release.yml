@@ -19,6 +19,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # CHANGELOG.md becomes the release notes, so don't release without any
+      - name: Check changelog
+        run: |
+          if ! grep -q '[^[:space:]]' CHANGELOG.md; then
+            echo "::error::CHANGELOG.md is empty, add this release's changes first"
+            exit 1
+          fi
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
@@ -75,3 +83,22 @@ jobs:
           files: |
             hide-youtube-shorts-chrome-${{ github.event.inputs.version }}.zip
             hide-youtube-shorts-firefox-${{ github.event.inputs.version }}.zip
+
+      # Move this release's notes to the top of CHANGELOG-ARCHIVE.md and start the next one empty
+      - name: Archive and clear changelog
+        run: |
+          VERSION=${{ github.event.inputs.version }}
+          DATE=$(TZ=Australia/Sydney date '+%-d %B %Y')
+          {
+            printf '## v%s (%s)\n\n' "$VERSION" "$DATE"
+            cat CHANGELOG.md
+            if [ -s CHANGELOG-ARCHIVE.md ]; then
+              printf '\n'
+              cat CHANGELOG-ARCHIVE.md
+            fi
+          } > CHANGELOG-ARCHIVE.md.new
+          mv CHANGELOG-ARCHIVE.md.new CHANGELOG-ARCHIVE.md
+          : > CHANGELOG.md
+          git add CHANGELOG.md CHANGELOG-ARCHIVE.md
+          git commit -m "Archive changelog for $VERSION"
+          git push
