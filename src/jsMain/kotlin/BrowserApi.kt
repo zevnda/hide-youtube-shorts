@@ -33,6 +33,16 @@ external interface TitleDetails {
 external interface ScriptingApi {
     fun insertCSS(injection: CssInjection): Promise<Unit>
     fun removeCSS(injection: CssInjection): Promise<Unit>
+    fun executeScript(injection: ScriptInjection): Promise<Array<InjectionResult>>
+}
+
+external interface ScriptInjection {
+    var func: dynamic
+    var target: InjectionTarget
+}
+
+external interface InjectionResult {
+    val result: Any?
 }
 
 external interface CssInjection {
@@ -52,6 +62,11 @@ external interface TabsApi {
     // Manifest V2 fallbacks for browsers without the scripting API
     fun insertCSS(tabId: Int, details: InjectDetails): Promise<Unit>
     fun removeCSS(tabId: Int, details: InjectDetails): Promise<Unit>
+    fun executeScript(tabId: Int, details: ScriptDetails): Promise<Array<Any?>>
+}
+
+external interface ScriptDetails {
+    var code: String
 }
 
 external interface Tab {

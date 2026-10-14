@@ -34,8 +34,34 @@ private suspend fun setState(isHidden: Boolean) {
     }
 }
 
+// Runs in the page, checks for the marker property set by the stylesheet
+private val cssMarkerCheck: dynamic =
+    js("(function () { return getComputedStyle(document.documentElement).getPropertyValue('--hide-youtube-shorts') !== '' })")
+
+// Check if the CSS is already on the page
+private suspend fun isCssInjected(tabId: Int): Boolean = try {
+    val scripting = browserApi.scripting
+    if (scripting != null && scripting.asDynamic().executeScript != null) {
+        val injection = jsObject<ScriptInjection> {
+            func = cssMarkerCheck
+            target = jsObject { this.tabId = tabId }
+        }
+        scripting.executeScript(injection).await().firstOrNull()?.result == true
+    } else {
+        val details = jsObject<ScriptDetails> { code = "($cssMarkerCheck)()" }
+        browserApi.tabs.executeScript(tabId, details).await().firstOrNull() == true
+    }
+} catch (e: Throwable) {
+    console.error("Failed to check for CSS:", e)
+    false
+}
+
 // Inject or remove CSS to hide/show YouTube Shorts
 private suspend fun manageShortsCss(tabId: Int, shouldHide: Boolean) {
+    // YouTube navigates without reloading, so the CSS is often still there. Injecting it twice means
+    // a single removeCSS won't show Shorts again
+    if (shouldHide && isCssInjected(tabId)) return
+
     try {
         val scripting = browserApi.scripting
         if (scripting != null && scripting.asDynamic().insertCSS != null) {

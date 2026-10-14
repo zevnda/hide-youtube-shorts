@@ -4,6 +4,11 @@
  * reel shelves, or a /shorts/ link
  */
 
+/* Lets the extension check if this stylesheet is already on the page */
+:root {
+  --hide-youtube-shorts: 1;
+}
+
 /* Sidebar, mini sidebar, channel tab, mobile bottom bar */
 :is(ytd-guide-entry-renderer, ytd-mini-guide-entry-renderer):has(#endpoint[title="Shorts"]),
 yt-tab-shape[tab-title="Shorts"],

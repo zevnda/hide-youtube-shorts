@@ -1,0 +1,1 @@
+- Fix Shorts staying hidden after turning the extension off
