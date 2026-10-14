@@ -1,63 +1,45 @@
-#endpoint[title="Shorts"] {
-  display: none !important;
-}
+/*
+ * YouTube reuses the same shelf and item elements for normal videos, so don't hide by element name
+ * alone or you'll wipe out half the page. Match on something only Shorts have, like [is-shorts],
+ * reel shelves, or a /shorts/ link.
+ *
+ * Easiest way to find one is to inspect a Short in devtools and look up the tree, or run
+ * `npm run inspect -- <url>` from e2e/. Run `npm test` in e2e/ after changing anything.
+ */
 
-yt-tab-shape[tab-title="Shorts"] {
-  display: none !important;
-}
-
-ytd-rich-item-renderer:has(a[href*="/shorts/"]) {
-  display: none !important;
-}
-
-ytd-rich-shelf-renderer:has(#dismissible) {
-  display: none !important;
-}
-
-ytm-rich-item-renderer:has(a[href*="/shorts/"]) {
-  display: none !important;
-}
-
-ytm-reel-shelf-renderer:has(a[href*="/shorts/"]) {
-  display: none !important;
-}
-
-ytd-reel-shelf-renderer:has(#dismissible) {
-  display: none !important;
-}
-
+/* Sidebar, mini sidebar, channel tab, mobile bottom bar */
+:is(ytd-guide-entry-renderer, ytd-mini-guide-entry-renderer):has(#endpoint[title="Shorts"]),
+yt-tab-shape[tab-title="Shorts"],
 ytm-pivot-bar-item-renderer:has(.pivot-shorts) {
   display: none !important;
 }
 
-ytd-notification-renderer:has(a[href*="/shorts/"]) {
+/* Shorts chip on History and Liked videos */
+chip-view-model:has(button[aria-label="Shorts"]) {
   display: none !important;
 }
 
-ytd-compact-video-renderer:has(a[href*="/shorts/"]) {
+/* Shorts shelves */
+ytd-rich-section-renderer:has(> #content > ytd-rich-shelf-renderer[is-shorts]),
+ytd-rich-shelf-renderer[is-shorts],
+ytd-reel-shelf-renderer,
+ytm-reel-shelf-renderer,
+grid-shelf-view-model:has(ytm-shorts-lockup-view-model) {
   display: none !important;
 }
 
-ytd-reel-shelf-renderer:has(a[href*="/shorts/"]) {
-  display: none !important;
-}
-
-ytd-video-renderer:has(a[href*="/shorts/"]) {
-  display: none !important;
-}
-
-ytm-video-with-context-renderer:has(a[href*="/shorts/"]) {
-  display: none !important;
-}
-
-ytd-shelf-renderer:has(a[href*="/shorts/"]) {
-  display: none !important;
-}
-
-ytm-item-section-renderer:has(a[href*="/shorts/"]) {
-  display: none !important;
-}
-
-grid-shelf-view-model {
+/* Individual Shorts in normal feeds */
+:is(
+  ytd-rich-item-renderer,
+  ytd-video-renderer,
+  ytd-compact-video-renderer,
+  ytd-grid-video-renderer,
+  ytd-shelf-renderer,
+  ytd-notification-renderer,
+  yt-lockup-view-model,
+  ytm-rich-item-renderer,
+  ytm-video-with-context-renderer,
+  ytm-compact-video-renderer
+):has(a[href*="/shorts/"]):not(:has(a[href*="/watch?v="], a[href*="/playlist?list="])) {
   display: none !important;
 }

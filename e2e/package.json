@@ -1,0 +1,14 @@
+{
+  "name": "hide-youtube-shorts-e2e",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "login": "node login.mjs",
+    "inspect": "node inspect.mjs",
+    "summary": "node summary.mjs",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
+}
