@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.imgur.com/pNIu6q2.png" width='80' alt='Click for larger image' />
+  <img src="icons/icon128.png" width="80" alt="Hide YouTube Shorts icon" />
   <h1>Hide YouTube Shorts</h1>
   <p>Hide YouTube Shorts videos effortlessly with this powerful browser extension</p>
 </div>
@@ -20,4 +20,4 @@
 - and anywhere else they usually appear
 
 ## License
-Copyright © 2022-2025 zevnda — **[GPL-3.0 License](./LICENSE)**
+Copyright © 2022-2026 zevnda — **[MIT License](./LICENSE)**
