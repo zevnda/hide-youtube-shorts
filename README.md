@@ -5,7 +5,7 @@
 </div>
 
 ## Installation - Unpacked extension
-1. Download the `.zip` file for `chrome` or `firefox` from [latest release](https://github.com/probablyraging/hide-youtube-shorts/releases)
+1. Download the `.zip` file for `chrome` or `firefox` from [latest release](https://github.com/probablyraging/hide-youtube-shorts/releases/latest)
 2. Extract the contents of `hide-youtube-shorts-<browser>.zip`
 3. Load the unpacked directory in the Chrome/Firefox extension manager
 
