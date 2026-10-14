@@ -5,3 +5,4 @@ dist/
 web-ext-artifacts/
 .env
 .amo-build-number
+e2e/
